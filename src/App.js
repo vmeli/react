@@ -1,26 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Curso from './Curso';
+import './styles/app.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <>
+    <h1>Ejemplos de card</h1>
+    <Curso 
+      //title="Cachorro"
+      //image="https://picsum.photos/id/237/200/300"
+      //categoria="mascotas"
+    />
+  </>
+)
 
 export default App;
