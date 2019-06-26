@@ -1,5 +1,6 @@
 import React from 'react';
 import Curso from './Curso';
+import Formulario from './Formulario';
 import './styles/app.scss';
 
 const lista =[
@@ -35,6 +36,7 @@ const App = () => (
       image="https://picsum.photos/id/237/200/300"
       categoria="mascotas"
     /> */}
+    <Formulario/>
   </>
 )
 
