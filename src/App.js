@@ -23,14 +23,14 @@ const lista =[
 
 const App = () => (
   <>
-    <h1>Ejemplos de card</h1>
+    {/* <h1>Ejemplos de card</h1>
     {
       lista.map( item => <Curso title={item.title}
                                 image={item.image}
                                 categoria={item.categoria}
                           />
       )
-    }
+    } */}
     {/* <Curso 
       title="Cachorro"
       image="https://picsum.photos/id/237/200/300"
