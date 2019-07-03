@@ -36,7 +36,7 @@ const App = () => (
       image="https://picsum.photos/id/237/200/300"
       categoria="mascotas"
     /> */}
-    <Formulario/>
+    <Formulario name="Sandor"/>
   </>
 )
 
