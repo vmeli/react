@@ -7,12 +7,14 @@ class Formulario extends Component {
 
         this.state = {
             nombre: "",
-            correo: ""
+            correo: "",
+            fecha: new Date()
         }
 
         // Enlazamos el this de la clase con el método
-        this.updateName = this.updateName.bind(this)
+        this.updateName  = this.updateName.bind(this)
         this.updateEmail = this.updateEmail.bind(this)
+        this.updateDate  = this.updateDate.bind(this)
     }
     
     updateName (e) {
@@ -26,11 +28,18 @@ class Formulario extends Component {
             correo: e.target.value
         })
     }
+
+    updateDate () {
+        this.setState({
+            fecha: new Date()
+        })
+    }
     
     render() {
         return (
             <div className="grid">
                 <h3>Formulario {this.props.name}</h3>
+                <div>Fecha actual: {Math.ceil(this.state.fecha/1000)}</div>
                 <form id="elemento">
                     <div className="form__item">
                         <label>Nombre completo</label>
@@ -57,6 +66,9 @@ class Formulario extends Component {
     //Montaje
     componentDidMount() {
         console.log("Saa",document.getElementById("elemento"))
+        // this.interval = setInterval(() => {
+        //     this.updateDate()
+        // }, 1000);
     }
     //Actualización
     componentDidUpdate(prevProps,prevstate) {
@@ -64,6 +76,9 @@ class Formulario extends Component {
         console.log("prevstate", prevstate)
     }
     //Desmontaje
+    componentWillUnmount() {
+        console.log("Sandor");
+    }
 }
 
 export default Formulario;
