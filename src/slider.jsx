@@ -13,19 +13,29 @@ export default class SimpleSlider extends React.Component {
         return (
             <Slider {...settings}>
                 <div key='1'>
-                    <img src="https://picsum.photos/id/250/646/380" alt=""/>
+                        <figure>
+                            <img src="https://picsum.photos/id/250/646/380" alt=""/>
+                        </figure>
                 </div>
                 <div key='2'>
-                    <img src="https://picsum.photos/id/251/646/380" alt="" />
+                        <figure>
+                            <img src="https://picsum.photos/id/251/646/380" alt="" />
+                        </figure>
                 </div>
                 <div key='3'>
-                    <img src="https://picsum.photos/id/252/646/380" alt="" />
+                        <figure>
+                            <img src="https://picsum.photos/id/252/646/380" alt="" />
+                        </figure>
                 </div>
                 <div key='4'>
-                    <img src="https://picsum.photos/id/253/646/380" alt="" />
+                        <figure>
+                            <img src="https://picsum.photos/id/253/646/380" alt="" />
+                        </figure>
                 </div>
                 <div key='5'>
-                    <img src="https://picsum.photos/id/254/646/380" alt="" />
+                        <figure>
+                            <img src="https://picsum.photos/id/254/646/380" alt="" />
+                        </figure>
                 </div>
             </Slider>
         );
