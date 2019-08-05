@@ -72,12 +72,13 @@ class Formulario extends Component {
     }
     //Actualización
     componentDidUpdate(prevProps,prevstate) {
-        console.log("prevProps", prevProps)
-        console.log("prevstate", prevstate)
+        console.log("prevProps", prevProps) //prop iniciales que se pasa al componente
+        console.log("prevstate", prevstate) //state iniciales
     }
     //Desmontaje
     componentWillUnmount() {
         console.log("Sandor");
+        // clearInterval(this.interval)
     }
 }
 
