@@ -1,54 +1,52 @@
+// El attribute component puede ser un component o un callback q retorna un component
+// El attribute exact es recomendable solo en el path del home
 import React from 'react';
-import Curso from './Curso';
+import GridCurso from './GridCurso';
+import GridSlider from './GridSlider';
 import Formulario from './Formulario';
-import SimpleSlider from './slider'; 
-import SimpleSliderLazyload from './sliderLazyload';
+import Card from './Card';
 import './styles/app.scss';
-
-const lista =[
-  {
-    title: 'Cachorro',
-    image: 'https://picsum.photos/id/237/200/300',
-    categoria: 'mascotas'
-  },
-  {
-    title: 'Recuerdos',
-    image: 'https://picsum.photos/id/320/200/300',
-    categoria: 'atardecer'
-  }, 
-  {
-    title: 'Infancia',
-    image: 'https://picsum.photos/id/820/200/300',
-    categoria: 'columpio'
-  }
-]
+import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
 const App = () => (
-  <>
-    <h1>Ejemplos de card</h1>
-    {
-      lista.map( item =>
-        <div className="wrapper-card">
-          <Curso title={item.title}
-                                  image={item.image}
-                                  categoria={item.categoria}
-                            />
-        </div>
-      )
-    } 
-    {/* <Curso 
-      title="Cachorro"
-      image="https://picsum.photos/id/237/200/300"
-      categoria="mascotas"
-    /> */}
-    {/* <Formulario name="Sandor"/> */}
-    <div className="slider-wrapper">
-      <SimpleSliderLazyload />
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/card">Card</Link>
+        </li>
+        <li>
+          <Link to="/slider">Slider</Link>
+        </li>
+        <li>
+          <Link to="/formulario">Formulario</Link>
+        </li>
+      </ul>
+
+      <hr />
+      <Switch>
+        <Route path="/" exact component={ () => (
+          <div className="wrapper-welcome">Sigue aprendiendo React ^^ !!!</div>
+        ) }/>
+        <Route path="/card/:slug" component={ Card }/> 
+        <Route path="/card" component={ GridCurso }/> 
+        <Route path="/slider" component={ GridSlider }/>
+        <Route path="/formulario" component={ () => <Formulario name="Sandor"/> }/>
+        < Route exact component = {
+          () => (
+            <div className="error-404">
+            <div>Error 404</div>
+            <span>Página no encontrada</span> 
+            </div>
+          )
+        }
+        />
+      </Switch>  
     </div>
-     <div className="slider-wrapper">
-      <SimpleSlider/>
-    </div>
-  </>
+  </Router>
 )
 
 export default App;

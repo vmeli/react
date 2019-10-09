@@ -2,11 +2,14 @@
 //reutilizando una estructura declarada
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 //const {title, image, categoria} = props;
-const Curso = ({title, image, categoria}) => (
+const Curso = ({ id, title, image, categoria }) => (
     <div className="card">
         <h3>{title}</h3>
-        <img src={image} alt={title} />
+        <Link to={`/card/${id}`}>
+            <img src={image} alt={title} />
+        </Link>
         <p>{categoria}</p>
         {/* {
             image
