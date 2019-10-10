@@ -1,0 +1,24 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './styles/menu.scss';
+
+const MainMenu = () => (
+    <nav>
+        <ul className="mainMenu">
+            <li>
+                <NavLink exact to="/" activeClassName="is-active">Home</NavLink> 
+            </li>
+            <li>
+                <NavLink to="/card" activeClassName="is-active">Card</NavLink>
+            </li>
+            <li>
+                <NavLink to="/slider" activeClassName="is-active">Slider</NavLink>
+            </li>
+            <li>
+                <NavLink to="/formulario" activeClassName="is-active">Formulario</NavLink>
+            </li>
+        </ul>
+    </nav>
+)
+
+export default MainMenu;

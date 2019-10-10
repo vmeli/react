@@ -1,0 +1,14 @@
+.mainMenu {
+    display: flex;
+    list-style: none;
+    padding: 0 0 20px;
+    justify-content: space-around;
+    border-bottom: 1px solid #FFF;
+    a {
+        text-decoration: none;
+    }
+}
+
+.is-active {
+    color: teal;
+}
