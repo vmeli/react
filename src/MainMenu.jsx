@@ -15,6 +15,9 @@ const MainMenu = () => (
                 <NavLink to="/slider" activeClassName="is-active">Slider</NavLink>
             </li>
             <li>
+                <NavLink to="/historial" activeClassName="is-active">Historial</NavLink>
+            </li>
+            <li>
                 <NavLink to="/formulario" activeClassName="is-active">Formulario</NavLink>
             </li>
         </ul>
