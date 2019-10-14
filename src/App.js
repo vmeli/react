@@ -7,6 +7,7 @@ import GridSlider from './GridSlider';
 import Formulario from './Formulario';
 import Card from './Card';
 import Historial from './Historial';
+import Users from './Users';
 import './styles/app.scss';
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 
@@ -39,6 +40,7 @@ const App = () => (
       <Route path="/slider" component={ GridSlider }/>
       <Route path="/historial/:valor" component={ Historial }/>
       <Route path="/historial" component={ Historial }/>
+      <Route path="/usuarios" component={ Users }/>
       <Route path="/formulario" component={ () => <Formulario name="Sandor"/> }/>
       < Route exact component = {
         () => (

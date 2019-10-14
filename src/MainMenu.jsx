@@ -18,6 +18,9 @@ const MainMenu = () => (
                 <NavLink to="/historial" activeClassName="is-active">Historial</NavLink>
             </li>
             <li>
+                <NavLink to="/usuarios" activeClassName="is-active">Usuarios</NavLink>
+            </li>
+            <li>
                 <NavLink to="/formulario" activeClassName="is-active">Formulario</NavLink>
             </li>
         </ul>

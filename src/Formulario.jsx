@@ -65,10 +65,10 @@ class Formulario extends Component {
     }
     //Montaje
     componentDidMount() {
-        console.log("Saa",document.getElementById("elemento"))
-        // this.interval = setInterval(() => {
-        //     this.updateDate()
-        // }, 1000);
+        //console.log("Saa",document.getElementById("elemento"))
+        this.interval = setInterval(() => {
+            this.updateDate()
+        }, 1000);
     }
     //Actualización
     componentDidUpdate(prevProps,prevstate) {
@@ -77,8 +77,8 @@ class Formulario extends Component {
     }
     //Desmontaje
     componentWillUnmount() {
-        console.log("Sandor");
-        // clearInterval(this.interval)
+        //console.log("Sandor");
+        clearInterval(this.interval)
     }
 }
 
