@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserCard from "./UserCard";
+import axios from "axios"
 
 class Users extends Component {
     constructor(props) {
@@ -9,19 +10,29 @@ class Users extends Component {
             users: []
         }
     }
+
     // Native Javascript
+    // componentDidMount() {
+    //     const url = 'https://jsonplaceholder.typicode.com/users';
+    //     fetch(url, {method: 'get'})
+    //     .then(response => response.json())
+    //     .then(json => {
+    //         this.setState({
+    //             users: json
+    //         })
+    //     })
+    // }
+
+    // Library Axios
     componentDidMount() {
         const url = 'https://jsonplaceholder.typicode.com/users';
-        fetch(url, {method: 'get'})
-        .then( response => response.json())
-        .then( json => {
+        axios.get(url)
+        .then(resp => {
             this.setState({
-                users: json
+                users: resp.data
             })
         })
     }
-
-    // Library Axios
 
     render() {
         const { users } = this.state;
