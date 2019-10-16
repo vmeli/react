@@ -42,12 +42,14 @@ class Users extends Component {
                 <h1>Usuarios</h1>
                 <div className="grid-4 grid">
                     {
-                        users.map(u => (
-                            <UserCard key={u.id} 
-                                name={u.username} 
-                                email={u.email} 
-                                phone={u.phone}
-                            />
+                        users.length === 0
+                        ? <h2 className="ta-c">Cargando...</h2>
+                        :   users.map(u => (
+                                <UserCard key={u.id} 
+                                    name={u.username} 
+                                    email={u.email} 
+                                    phone={u.phone}
+                                />
                             ))
                     }
                 </div>
