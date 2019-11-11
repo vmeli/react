@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Curso from './Curso';
+import Course from './Course';
 import axios from "axios";
 
 class GridCurso extends Component {
@@ -22,25 +22,7 @@ class GridCurso extends Component {
         const { lista } = this.state;
         return <>
             <h1>Ejemplos de card</h1>
-            {
-                lista.length === 0
-                ? <h2 className="ta-c">Cargando...</h2>
-                :   lista.map((item, key) => (
-                        <div className="wrapper-card" key={key}>
-                            <Curso id={item.id}
-                                title={item.title}
-                                image={item.image}
-                                categoria={item.categoria}
-                            />
-                        </div>
-                ))
-            }
-            {/* <Curso 
-                    title="Cachorro"
-                    image="https://picsum.photos/id/237/200/300"
-                    categoria="mascotas"
-                /> 
-            */}
+            <Course data={lista}/>
         </> 
     } 
 

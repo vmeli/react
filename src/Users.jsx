@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserCard from "./UserCard";
+import User from "./User";
 import axios from "axios"
 
 class Users extends Component {
@@ -10,18 +10,6 @@ class Users extends Component {
             users: []
         }
     }
-
-    // Native Javascript
-    // componentDidMount() {
-    //     const url = 'https://jsonplaceholder.typicode.com/users';
-    //     fetch(url, {method: 'get'})
-    //     .then(response => response.json())
-    //     .then(json => {
-    //         this.setState({
-    //             users: json
-    //         })
-    //     })
-    // }
 
     // Library Axios
     componentDidMount() {
@@ -40,19 +28,7 @@ class Users extends Component {
         return (
             <>
                 <h1>Usuarios</h1>
-                <div className="grid-4 grid">
-                    {
-                        users.length === 0
-                        ? <h2 className="ta-c">Cargando...</h2>
-                        :   users.map(u => (
-                                <UserCard key={u.id} 
-                                    name={u.username} 
-                                    email={u.email} 
-                                    phone={u.phone}
-                                />
-                            ))
-                    }
-                </div>
+                <User users={users} />
             </>
         )       
     }
