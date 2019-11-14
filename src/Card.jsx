@@ -1,39 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const lista = [
-    {
-        id: 1,
-        title: 'Cachorro',
-        image: 'https://picsum.photos/id/237/200/300',
-        categoria: 'mascotas'
-    },
-    {
-        id: 2,
-        title: 'Recuerdos',
-        image: 'https://picsum.photos/id/320/200/300',
-        categoria: 'atardecer'
-    },
-    {
-        id: 3,
-        title: 'Infancia',
-        image: 'https://picsum.photos/id/820/200/300',
-        categoria: 'columpio'
-    }
-]
+// Los HOOK ---> react 16.8
+// useState es una function q recibe como parameter el state que queremos utilizar
+// devuelve un array de dos elementos, el 1ero ---> state y el 2do ---> un callback que se puede utilizar para modificar el state nuevamente
 
+// useEffect es una function que recibe como 1er parameter un callback ---> se va ejecutar cada vez q el componente se renderice(cuando recibe nuevas propiedades o el state cambia)
+// useEffect({}, []) se agrega el 2do parameter([]) para q sea llamado a cada rato el useEffect,solo una vez para emular componentDidMount()
 const Card = ({ match }) => {
-    
-    const currentList = lista.filter(item => item.id === parseInt(match.params.slug))[0]
+
+    const [thumbnails, setThumbnails] = useState({}); // setThumbnails ---> function que actualiza el state(thumbnails)
+    const [comment, setCommet] = useState("Sin comentario"); // setCommet ---> function que actualiza el state(comment)
+
+    const myComment = e => {
+        setCommet(e.target.value);
+    }
+
+    useEffect(() => {
+        // console.log("Sandor1"); para verificar cuantas veces es llamado useEffect
+        const url = `http://my-json-server.typicode.com/vmeli/json-db/lista/${match.params.slug}`;
+        axios.get(url)
+            .then(response => setThumbnails(response.data))
+    }, [])
+
+    //{ console.log("useEffect", state) }
     
     return (
-        currentList 
-        ?
-        <div className="card">
-            <h3>{currentList.title || ""}</h3>
-            <img src={currentList.image || ""} alt={currentList.title || ""} />
-            <p>{currentList.categoria || ""}</p>     
-        </div>
-        : null
+        thumbnails
+            ?
+            <>
+                <div className="card">
+                    <h3>{thumbnails.title || ""}</h3>
+                    <img src={thumbnails.image || ""} alt={thumbnails.title || ""} />
+                    <p>{thumbnails.categoria || ""}</p>
+                </div>
+                <div className="card">
+                    <h2>Escribe tu comentario</h2>
+                    <input className="inputComment" type="text" placeholder="Escribe ..." onChange={myComment.bind(this)}/>
+                    <p>{comment}</p>
+                </div>
+            </>
+            : null
     )
 }
 

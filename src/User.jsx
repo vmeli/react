@@ -3,7 +3,9 @@ import UserCard from './UserCard';
 import widthLoader from './HOC/withLoaderFunction';
 
 const User = ({users}) => {
+
     return <div className="grid-4 grid">
+            { console.log(users)}
             {
                 users.map(u => (
                     <UserCard key={u.id}
