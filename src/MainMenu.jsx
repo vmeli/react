@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './styles/menu.scss';
+import CartCounter from './Atoms/CartCounter';
 
 const MainMenu = () => (
     <nav>
@@ -23,6 +24,7 @@ const MainMenu = () => (
             <li>
                 <NavLink to="/formulario" activeClassName="is-active">Formulario</NavLink>
             </li>
+            <CartCounter />
         </ul>
     </nav>
 )

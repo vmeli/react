@@ -8,7 +8,7 @@ const withLoader = (propsValue) => (WrappedComponent) => {
             super(props)
         }
         render() {
-            console.log("this.props", this.props[propsValue].length);
+            //console.log("this.props", this.props[propsValue].length);
             return this.props[propsValue].length === 0
                     ?   <h2 className="ta-c"> Cargando... </h2> 
                     :   <WrappedComponent {...this.props} />

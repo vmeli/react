@@ -12,3 +12,15 @@
 .is-active {
     color: teal;
 }
+
+.btn-cart {
+    border: 1px solid teal;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: teal;
+    border-radius: 5px;
+}
+.btn-cart:hover {
+    background-color: teal;
+    color: #FFF;
+}
